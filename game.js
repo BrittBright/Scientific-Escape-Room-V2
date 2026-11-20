@@ -1,100 +1,110 @@
 (() => {
   "use strict";
 
-  const CODE = "BCBCAA";
-  const STORAGE_KEY = "flemingMoldyDishEscapeV1";
+  const CODE = "BCBDAA";
+  const STORAGE_KEY = "flemingMoldyDishEscapeV2";
   const order = ["observation", "question", "hypothesis", "experiment", "results", "conclusion"];
-  const letters = { observation: "B", question: "C", hypothesis: "B", experiment: "C", results: "A", conclusion: "A" };
+  const letters = { observation: "B", question: "C", hypothesis: "B", experiment: "D", results: "A", conclusion: "A" };
 
   const puzzles = {
     observation: {
       number: 1,
       step: "OBSERVATION",
-      title: "What can you observe?",
-      prompt: "Fleming returns to a bacterial culture plate and notices a mold colony. Which statement describes visible evidence without adding an explanation?",
-      hint: "An observation reports what is seen or measured. Avoid claims about what caused the pattern or what it could do in a patient.",
+      title: "What did Fleming observe?",
+      prompt: "Fleming examines the contaminated bacterial culture plate. Which observation best describes what he sees?",
+      hint: "Choose the statement that describes what is happening on the culture plate, without making a claim about treatment, resistance, or cause.",
+      correct: ["B"],
       choices: [
-        ["A", "The mold released penicillin and killed the bacteria."],
-        ["B", "A clear area surrounds the mold colony; bacterial colonies are visible farther away."],
-        ["C", "The mold can be used to treat infections in people."],
-        ["D", "The bacteria changed their genes to resist the mold."]
+        ["A", "The mold definitely produces an antibiotic that can treat every bacterial infection."],
+        ["B", "Bacterial growth is reduced in the area surrounding the mold."],
+        ["C", "All bacteria on the plate have become resistant to the mold."],
+        ["D", "The mold and bacteria grow equally well everywhere on the plate."]
       ],
-      explanation: "The clear area and the colonies farther away describe a visible pattern. They do not yet explain its cause."
+      explanation: "Reduced bacterial growth around the mold is the observation. The observation alone does not explain why growth is reduced."
     },
     question: {
       number: 2,
-      step: "QUESTION",
-      title: "Ask a testable question",
-      prompt: "The team wants to test whether material from the mold culture affects bacterial growth. Which question is specific and measurable?",
-      hint: "Look for a question that compares two conditions and names an outcome the team can measure.",
+      step: "SCIENTIFIC QUESTION",
+      title: "Ask the scientific question",
+      prompt: "Fleming needs a question that can be investigated scientifically. Which is the best choice?",
+      hint: "A scientific question can be investigated with evidence. Choose one that asks about the mold and bacterial growth on the culture plate.",
+      correct: ["C"],
       choices: [
-        ["A", "Is mold always helpful?"],
+        ["A", "Is mold always harmful?"],
         ["B", "Why is nature interesting?"],
-        ["C", "Under matched lab conditions, does filtered liquid from a mold culture reduce bacterial growth compared with processed mold-free broth?"],
-        ["D", "Will mold cure every bacterial infection?"]
+        ["C", "Does the mold inhibit the growth of the bacteria on the culture plate?"],
+        ["D", "Will penicillin cure every disease in humans?"]
       ],
-      explanation: "This question names the material being tested, a comparison condition, and a measurable outcome: bacterial growth."
+      explanation: "This question is focused on a measurable effect of the mold on bacterial growth on the plate."
     },
     hypothesis: {
       number: 3,
       step: "HYPOTHESIS",
       title: "Propose an explanation",
-      prompt: "Which hypothesis gives a testable explanation and a measurable prediction?",
-      hint: "A useful hypothesis links a possible cause to a predicted result that could support or challenge the idea.",
+      prompt: "Fleming proposes a possible explanation for the lack of bacterial growth near the mold. Which hypothesis is most appropriate?",
+      hint: "Choose a possible explanation that can be tested. Avoid general statements and answers that assume the result or name a famous antibiotic without evidence.",
+      correct: ["B"],
       choices: [
-        ["A", "Mold often grows where bacteria also grow."],
-        ["B", "If a growth-inhibiting factor is present in liquid from the mold culture, then bacteria exposed to its filtered liquid will show a larger average clear zone than bacteria exposed to processed mold-free broth, because the factor reduces bacterial growth."],
-        ["C", "All bacteria can be killed by medicine."],
-        ["D", "The substance must be penicillin because penicillin is famous."]
+        ["A", "Mold is always better at growing than bacteria."],
+        ["B", "If the mold produces a substance that inhibits the bacteria, then bacterial growth will be reduced near the mold."],
+        ["C", "The bacteria disappeared because all bacteria die naturally after a few days."],
+        ["D", "Penicillin must be the answer because it is a famous antibiotic."]
       ],
-      explanation: "The hypothesis proposes a possible factor and predicts a measurable difference between the treatment and control."
+      explanation: "This is a possible, testable explanation for why bacterial growth is reduced near the mold."
     },
     experiment: {
       number: 4,
       step: "EXPERIMENT",
-      title: "Choose a fair test",
-      prompt: "The team compares filtered liquid from the mold culture with processed broth that never contained mold. Which design best tests the hypothesis fairly?",
-      hint: "Keep conditions the same, use a control, repeat the comparison, and change only the source of the liquid applied to the plates.",
+      title: "Design a fair test",
+      prompt: "Fleming's team wants to test whether the mold inhibits bacterial growth. Which features should be kept the same when comparing experimental plates? Select all that apply.",
+      hint: "Keep the starting bacteria, growth medium, and incubation conditions consistent. The plate's mold or mold product is the factor being tested, so that condition should vary.",
+      correct: ["A", "B", "D"],
+      multiSelect: true,
       choices: [
-        ["A", "Use a different amount of bacteria on each plate and incubate them for different lengths of time."],
-        ["B", "Use different bacterial species and different agar for the two liquids."],
-        ["C", "Use replicate plates with the same bacterial strain and starting amount; apply equal volumes of filtered mold-culture liquid or identically processed mold-free broth; keep the agar, disks, and incubation conditions the same; then measure clear-zone diameters."],
-        ["D", "Place mold directly on every plate and change the incubation time until a clear area appears."]
+        ["A", "The starting amount of bacteria"],
+        ["B", "The type of growth medium"],
+        ["C", "Whether the plate receives the mold or its tested product"],
+        ["D", "The incubation conditions"]
       ],
-      explanation: "The liquid source is the independent variable. Clear-zone diameter is the dependent variable. Processed mold-free broth is the negative control. The bacterial strain and amount, agar, disks, liquid volume, and incubation conditions are held constant. Replicate plates help show whether the pattern is consistent."
+      explanation: "A, B, and D should be kept the same: the starting amount of bacteria, growth medium, and incubation conditions. C is the factor the team is testing, so it should vary. Record D—the last letter in the correct set—as the archive letter for Lock 4."
     },
     results: {
       number: 5,
       step: "RESULTS AND ANALYSIS",
       title: "Analyze the evidence",
-      prompt: "These fictional teaching results come from a follow-up test. Which interpretation is best supported?",
-      hint: "Find the mean for the three treatment measurements: add them, then divide by three. A clear zone shows reduced visible growth around the substance; it does not by itself show that all cells were killed.",
-      extra: '<div class="data-table-wrap"><table class="data-table"><caption>Fictional follow-up data — clear-zone diameter</caption><thead><tr><th scope="col">Condition</th><th scope="col">Replicate 1</th><th scope="col">Replicate 2</th><th scope="col">Replicate 3</th></tr></thead><tbody><tr><th scope="row">Filtered mold-culture liquid</th><td>12 mm</td><td>14 mm</td><td>13 mm</td></tr><tr><th scope="row">Processed mold-free broth</th><td>0 mm</td><td>0 mm</td><td>0 mm</td></tr></tbody></table></div>',
+      prompt: "Imagine that a follow-up experiment produces these results. Which interpretation is best supported by the data?",
+      hint: "Compare the two conditions as stated. Choose the interpretation that describes the evidence without making claims about every bacterium or treating people.",
+      correct: ["A"],
+      extra: '<div class="data-table-wrap"><table class="data-table"><caption>Follow-up experiment results</caption><thead><tr><th scope="col">Experimental condition</th><th scope="col">Bacterial growth</th></tr></thead><tbody><tr><th scope="row">Bacteria grown without mold product</th><td>Heavy growth</td></tr><tr><th scope="row">Bacteria grown with mold product</th><td>Little or no growth near the tested substance</td></tr></tbody></table></div>',
       choices: [
-        ["A", "The mean clear zone is 13 mm with mold-culture liquid and 0 mm with the control, supporting reduced bacterial growth around the tested liquid."],
-        ["B", "The mean is 39 mm, so the liquid destroyed every bacterial cell."],
-        ["C", "The results prove that the liquid cures bacterial infections."],
-        ["D", "Every mold must produce a substance that works against all bacteria."]
+        ["A", "Under the tested conditions, the mold product inhibited bacterial growth."],
+        ["B", "The mold product kills every kind of bacterium."],
+        ["C", "The mold product is safe for humans because it inhibits bacteria."],
+        ["D", "The experiment proves that the mold product will cure infections."]
       ],
-      explanation: "The mold-culture liquid has a mean clear-zone diameter of 13 mm; the control mean is 0 mm. This supports reduced visible growth under the tested conditions. The data do not establish that cells were killed, identify the active substance, or show that it treats infections."
+      explanation: "The data support inhibition of bacterial growth under the conditions tested. They do not show that every kind of bacterium is affected, establish safety for people, or prove that the product cures infections."
     },
     conclusion: {
       number: 6,
       step: "CONCLUSION",
-      title: "Draw a supported conclusion",
-      prompt: "The results support the prediction that filtered liquid from this mold culture reduces visible bacterial growth in the test. Which conclusion stays within the evidence?",
-      hint: "Connect the conclusion to the specific organism, material, outcome, and conditions tested. Leave broader claims for future studies.",
+      title: "Draw a conclusion",
+      prompt: "The results support Fleming's idea that the mold produces something that inhibits bacterial growth. What is the best conclusion?",
+      hint: "A conclusion should reflect what the results support and identify what still needs to be studied. It should not overstate the evidence.",
+      correct: ["A"],
       choices: [
-        ["A", "Under the tested conditions, filtered liquid from this mold culture reduced visible growth of this bacterial culture compared with the control. Further tests are needed to identify the cause and investigate broader uses."],
-        ["B", "Fleming proved a scientific law that explains all bacterial growth."],
-        ["C", "Every mold produces an antibiotic that works on all bacteria."],
-        ["D", "The liquid is a safe and effective medicine for patients."]
+        ["A", "The results support the hypothesis, and further experiments are needed to identify and study the substance."],
+        ["B", "The hypothesis is now a scientific law."],
+        ["C", "No additional research is needed because the results prove the substance is a medicine."],
+        ["D", "The results prove that all molds produce penicillin."]
       ],
-      explanation: "This conclusion matches the tested material, bacterial culture, comparison, and outcome. Identifying the substance and establishing medical use would require much more evidence."
+      explanation: "The conclusion reflects the evidence while recognizing that identifying and studying the substance requires further experiments."
     }
   };
 
   const dialog = document.getElementById("puzzle-dialog");
+  const briefingDialog = document.getElementById("briefing-dialog");
+  const briefingButton = document.getElementById("briefing-button");
+  const briefingTitle = document.getElementById("briefing-title");
   const dialogKicker = document.getElementById("dialog-kicker");
   const dialogTitle = document.getElementById("dialog-title");
   const dialogPrompt = document.getElementById("dialog-prompt");
@@ -174,11 +184,13 @@
   function renderChoices(puzzle) {
     const options = puzzle.choices.map(([letter, text], index) => {
       const id = `answer-${puzzle.number}-${letter}`;
-      const checked = state.solved[currentPuzzle] && letter === letters[currentPuzzle] ? " checked" : "";
+      const checked = state.solved[currentPuzzle] && puzzle.correct.includes(letter) ? " checked" : "";
       const disabled = state.solved[currentPuzzle] ? " disabled" : "";
-      return `<label class="answer-option" for="${id}"><input id="${id}" type="radio" name="answer" value="${letter}"${checked}${disabled}><span><strong>${letter}.</strong> ${escapeText(text)}</span></label>`;
+      const type = puzzle.multiSelect ? "checkbox" : "radio";
+      return `<label class="answer-option" for="${id}"><input id="${id}" type="${type}" name="answer" value="${letter}"${checked}${disabled}><span><strong>${letter}.</strong> ${escapeText(text)}</span></label>`;
     }).join("");
-    return `${puzzle.extra || ""}<fieldset class="answer-set"><legend>Choose one answer</legend>${options}</fieldset>`;
+    const legend = puzzle.multiSelect ? "Select all that apply" : "Choose one answer";
+    return `${puzzle.extra || ""}<fieldset class="answer-set"><legend>${legend}</legend>${options}</fieldset>`;
   }
 
   function openPuzzle(key, trigger) {
@@ -229,7 +241,7 @@
     checkButton.hidden = true;
     checkButton.disabled = true;
     if (state.completed) {
-      puzzleBody.innerHTML = `<div class="ending-card"><div class="ending-symbol" aria-hidden="true">✓</div><h3>Evidence recovered</h3><p>Your code: <strong class="ending-code">${CODE}</strong></p><p>The observation led to a test. The results support limited inhibition under these conditions, but they do not identify the active substance or establish medical use.</p><p>Historical note: Fleming’s 1928 observation was an important starting point. Developing penicillin into a practical medicine required substantial further work by other scientists, including Howard Florey and Ernst Chain.</p></div>`;
+      puzzleBody.innerHTML = `<div class="ending-card"><div class="ending-symbol" aria-hidden="true">✓</div><h3>Evidence recovered</h3><p>Your code: <strong class="ending-code">${CODE}</strong></p><p>The results support Fleming’s idea that the mold produces something that inhibits bacterial growth. Further experiments are needed to identify and study the substance.</p><p><strong>Important historical note:</strong> Fleming’s 1928 observation involved a mold later identified as <em>Penicillium</em> and a bacterial culture in which growth was inhibited around the mold. His observation was an important starting point, but developing penicillin into a practical medicine required further research by other scientists, including Howard Florey and Ernst Chain.</p><p><strong>Debrief:</strong> Why is an observation alone not enough to establish a scientific explanation? Consider testing hypotheses, controlling variables, collecting evidence, and repeating experiments.</p></div>`;
     } else {
       puzzleBody.innerHTML = `<div class="system-restored"><span class="restore-symbol" aria-hidden="true">↗</span><p>Six locks open. The research notes are ready for the final code.</p><strong aria-hidden="true">6/6</strong></div><div class="keypad-form" id="keypad-form" role="group" aria-label="Archive code"><label class="visually-hidden" for="keypad-input">Six-letter archive code</label><input class="keypad-input" id="keypad-input" name="code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="6" aria-describedby="keypad-feedback" placeholder="______"><button class="button button-primary" id="keypad-submit" type="button">Unlock archive <span aria-hidden="true">→</span></button></div><p class="keypad-feedback" id="keypad-feedback" aria-live="polite"></p><p class="completion-note">Enter one letter from each lock, in order. The final note distinguishes the historical observation from the fictional follow-up data in this activity.</p>`;
       window.setTimeout(() => document.getElementById("keypad-input")?.focus(), 30);
@@ -268,17 +280,21 @@
   puzzleForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!currentPuzzle || !puzzles[currentPuzzle] || state.solved[currentPuzzle]) return;
-    const selected = puzzleForm.querySelector('input[name="answer"]:checked');
-    if (!selected) {
+    const puzzle = puzzles[currentPuzzle];
+    const selected = [...puzzleForm.querySelectorAll('input[name="answer"]:checked')].map((input) => input.value).sort();
+    const correct = puzzle.correct.slice().sort();
+    if (!selected.length) {
       feedback.textContent = "Select an answer before checking the lock.";
       feedback.className = "feedback is-error";
       return;
     }
-    if (selected.value === letters[currentPuzzle]) {
+    if (selected.length === correct.length && selected.every((value, index) => value === correct[index])) {
       state.solved[currentPuzzle] = true;
       saveState();
       updateProgress();
-      feedback.textContent = `Correct. Record ${letters[currentPuzzle]} for Lock ${String(puzzles[currentPuzzle].number).padStart(2, "0")}. ${puzzles[currentPuzzle].explanation}`;
+      feedback.textContent = puzzle.multiSelect
+        ? `Correct. You selected ${puzzle.correct.join(", ")}. Record ${letters[currentPuzzle]} for Lock ${String(puzzle.number).padStart(2, "0")}. ${puzzle.explanation}`
+        : `Correct. Record ${letters[currentPuzzle]} for Lock ${String(puzzle.number).padStart(2, "0")}. ${puzzle.explanation}`;
       feedback.className = "feedback is-success";
       checkButton.hidden = true;
       checkButton.disabled = true;
@@ -306,6 +322,17 @@
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) closeDialog();
   });
+
+  briefingButton.addEventListener("click", () => {
+    briefingDialog.showModal();
+    briefingTitle.focus();
+  });
+  document.getElementById("close-briefing-icon").addEventListener("click", () => briefingDialog.close());
+  document.getElementById("close-briefing").addEventListener("click", () => briefingDialog.close());
+  briefingDialog.addEventListener("click", (event) => {
+    if (event.target === briefingDialog) briefingDialog.close();
+  });
+  briefingDialog.addEventListener("close", () => briefingButton.focus());
 
   document.getElementById("reset-button").addEventListener("click", () => {
     if (!window.confirm("Reset all six locks and clear the saved progress in this browser?")) return;

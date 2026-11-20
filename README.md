@@ -31,11 +31,27 @@ Replace the URL with the published GitHub Pages address. Canvas settings may blo
 ## Activity details
 
 - Six ordered locks cover observation, question, hypothesis, experiment, results and analysis, and conclusion.
-- Students receive one letter per correct answer. The final code is `BCBCAA`.
+- Lock 4 is a select-all question. The correct conditions to keep constant are A, B, and D; students record D, the last letter in that correct set, for the archive code.
+- Students receive one letter per lock. The final code is `BCBDAA`.
 - Hints are available in each lock. There is no timer.
 - Progress is stored locally in the student's browser. No student information is collected or transmitted.
-- The follow-up measurements shown in Lock 5 are fictional teaching data, not Fleming's historical measurements.
-- The ending distinguishes Fleming's initial observation from the later research needed to develop penicillin into a practical medicine.
+- Lock 5 uses the qualitative follow-up results in the activity draft; no quantitative measurements are added.
+- The ending notes that Fleming's initial observation was an important starting point and that other scientists, including Howard Florey and Ernst Chain, contributed further research needed to develop penicillin into a practical medicine.
+
+## Instructor answer key
+
+| Lock | Scientific step | Correct answer | Archive letter |
+| --- | --- | --- | --- |
+| 1 | Observation | B | B |
+| 2 | Question | C | C |
+| 3 | Hypothesis | B | B |
+| 4 | Experiment / controlled variables | A, B, D | D (last letter in the correct set) |
+| 5 | Results and data analysis | A | A |
+| 6 | Conclusion | A | A |
+
+Final code: `BCBDAA`.
+
+Debrief: Why is an observation alone not enough to establish a scientific explanation? Discuss testing hypotheses, controlling variables, collecting evidence, and repeating experiments.
 
 ## Canvas and grading
 

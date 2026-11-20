@@ -31,7 +31,8 @@
         </div>
         <div class="briefing">
           <p class="briefing-label">MISSION BRIEF</p>
-          <p>London, 1928. Alexander Fleming notices a mold colony on a bacterial culture plate. Bacterial growth is sparse near the mold and dense farther away. You are helping review the observation and follow-up tests. Solve six scientific-method locks to recover the lab notes and decide what the evidence supports.</p>
+          <p>It is 1928. Alexander Fleming returns to his laboratory after an absence and notices that bacteria near mold on a culture plate are not growing as expected. Can his team test the idea that the mold inhibits bacterial growth?</p>
+          <button class="text-button" id="briefing-button" type="button" aria-haspopup="dialog" aria-controls="briefing-dialog">Read the full mission briefing</button>
         </div>
       </section>
 
@@ -227,7 +228,7 @@
             </div>
             <span class="notebook-icon" aria-hidden="true">✎</span>
           </div>
-          <p class="notebook-copy">Record the letter from each correct response in scientific-method order.</p>
+          <p class="notebook-copy">Record one archive letter per lock, in scientific-method order. Lock 4 is select-all; its directions explain the code letter.</p>
           <ol class="clue-list" id="clue-list">
             <li data-clue="observation"><span class="clue-index">01</span><span class="clue-name">Observation</span><span class="clue-letter">—</span></li>
             <li data-clue="question"><span class="clue-index">02</span><span class="clue-name">Question</span><span class="clue-letter">—</span></li>
@@ -275,7 +276,22 @@
       </div>
     </form>
   </dialog>
+  <dialog class="puzzle-dialog briefing-dialog" id="briefing-dialog" aria-labelledby="briefing-title">
+    <div class="dialog-topline">
+      <p class="eyebrow">CASE FILE 1928 / MISSION BRIEF</p>
+      <button class="icon-button" id="close-briefing-icon" type="button" aria-label="Close mission briefing">×</button>
+    </div>
+    <h2 id="briefing-title" tabindex="-1">The mystery of the moldy culture plate</h2>
+    <p class="dialog-prompt">It is 1928, and scientist Alexander Fleming is studying bacteria in his laboratory. When he returns to his work after an absence, he notices something unusual: one of his bacterial culture plates has mold growing on it, and the bacteria near the mold are not growing as expected.</p>
+    <p class="dialog-prompt">Fleming suspects that the mold may be producing a substance that prevents bacterial growth. But how can he test this idea?</p>
+    <p class="dialog-prompt">You are part of Fleming’s research team. His laboratory notes are locked away, and you must solve six scientific puzzles to uncover how observations, questions, hypotheses, experiments, data, and conclusions helped lead to the discovery of penicillin.</p>
+    <p class="dialog-prompt">Your mission: Solve each lock by applying the steps of the scientific method. Each correct answer brings you closer to unlocking the mystery of the moldy petri dish!</p>
+    <p class="small-note"><strong>How to play:</strong> Open the six locks from left to right, use a hint whenever you need one, and record the code letter each lock awards. Lock 4 asks you to select all the conditions that stay the same. For the archive code, record the last letter in your correct set of choices.</p>
+    <div class="dialog-actions">
+      <button class="button button-secondary" id="close-briefing" type="button">Back to the lab</button>
+    </div>
+  </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="game.js?v=1" defer></script>
+  <script src="game.js?v=2" defer></script>
 </body>
 </html>
