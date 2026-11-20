@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#241d16">
+  <meta name="description" content="An asynchronous point-and-click escape room about Alexander Fleming, evidence, and the scientific method.">
+  <title>The Mystery of the Moldy Petri Dish</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Moldy Petri Dish escape room home">
+        <span class="wordmark-mark" aria-hidden="true">LAB</span>
+        <span>FIELD<span class="wordmark-accent">/</span>NOTES</span>
+      </a>
+      <div class="status-cluster">
+        <span class="status-light" aria-hidden="true"></span>
+        <span>ARCHIVE SEALED</span>
+        <span class="status-divider" aria-hidden="true">/</span>
+        <span id="progress-label">0 OF 6 LOCKS OPEN</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-row" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">INTRODUCTORY BIOLOGY // CASE FILE 1928</p>
+          <h1 id="page-title">The Mystery of the<br><span>Moldy Petri Dish</span></h1>
+        </div>
+        <div class="briefing">
+          <p class="briefing-label">MISSION BRIEF</p>
+          <p>London, 1928. Alexander Fleming notices a mold colony on a bacterial culture plate. Bacterial growth is sparse near the mold and dense farther away. You are helping review the observation and follow-up tests. Solve six scientific-method locks to recover the lab notes and decide what the evidence supports.</p>
+        </div>
+      </section>
+
+      <div class="game-layout">
+        <section class="room-card" aria-labelledby="room-heading">
+          <div class="room-toolbar">
+            <div>
+              <p class="eyebrow">LOCATION 01</p>
+              <h2 id="room-heading">Fleming's Laboratory</h2>
+            </div>
+            <div class="room-coordinates" aria-label="London, 1928">LONDON <span>•</span> 1928</div>
+          </div>
+
+          <div class="scene" aria-label="Illustrated 1928 laboratory with six clickable investigation stations and a locked archive">
+            <svg class="room-art" viewBox="0 0 1000 560" role="img" aria-labelledby="scene-title scene-desc" preserveAspectRatio="xMidYMid slice">
+              <title id="scene-title">A 1928 microbiology laboratory</title>
+              <desc id="scene-desc">A culture plate, question notes, hypothesis card, paired test plates, results clipboard, conclusion report, and a locked archive are arranged from left to right.</desc>
+              <defs>
+                <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#d8c7a4"/>
+                  <stop offset="1" stop-color="#bba47c"/>
+                </linearGradient>
+                <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#936842"/>
+                  <stop offset="1" stop-color="#68482f"/>
+                </linearGradient>
+                <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#f4ebd5"/>
+                  <stop offset="1" stop-color="#dfcfaa"/>
+                </linearGradient>
+                <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#d7e0cf" stop-opacity=".82"/>
+                  <stop offset="1" stop-color="#8fa28a" stop-opacity=".48"/>
+                </linearGradient>
+                <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="150%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+                  <feOffset dy="4"/>
+                  <feComponentTransfer><feFuncA type="linear" slope=".22"/></feComponentTransfer>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <rect width="1000" height="560" fill="url(#wall)"/>
+              <path d="M0 421H1000V560H0Z" fill="#8d7454"/>
+              <path d="M0 421H1000" stroke="#62492f" stroke-width="5" opacity=".6"/>
+              <path d="M0 472H1000M0 520H1000" stroke="#d0b58a" stroke-width="2" opacity=".22"/>
+              <path d="M155 0V421M850 0V421" stroke="#9b805c" stroke-width="3" opacity=".55"/>
+
+              <!-- window and shelves -->
+              <rect x="35" y="48" width="162" height="180" rx="3" fill="#6e5942"/>
+              <rect x="45" y="58" width="142" height="160" fill="#b3c2bd"/>
+              <path d="M116 58V218M45 138H187" stroke="#7c684c" stroke-width="7"/>
+              <path d="M46 63L112 133M185 62L120 132M48 214L111 145" stroke="#e6e1c8" stroke-width="2" opacity=".42"/>
+              <path d="M270 105H694V116H270Z" fill="#74563b"/>
+              <path d="M290 116V126M675 116V126" stroke="#5e452f" stroke-width="5"/>
+              <rect x="306" y="60" width="46" height="45" rx="4" fill="url(#glass)" stroke="#68745e" stroke-width="2"/>
+              <rect x="315" y="49" width="28" height="13" rx="2" fill="#6c5540"/>
+              <rect x="385" y="71" width="37" height="34" rx="4" fill="url(#glass)" stroke="#68745e" stroke-width="2"/>
+              <rect x="392" y="62" width="23" height="11" rx="2" fill="#6c5540"/>
+              <rect x="455" y="55" width="54" height="50" rx="4" fill="url(#glass)" stroke="#68745e" stroke-width="2"/>
+              <rect x="465" y="43" width="34" height="14" rx="2" fill="#6c5540"/>
+              <rect x="548" y="68" width="39" height="37" rx="4" fill="url(#glass)" stroke="#68745e" stroke-width="2"/>
+              <rect x="556" y="59" width="23" height="11" rx="2" fill="#6c5540"/>
+              <path d="M320 92H338M397 94H411M467 92H497M559 96H576" stroke="#77876e" stroke-width="5" opacity=".8"/>
+              <circle cx="785" cy="93" r="38" fill="#e8dcc0" stroke="#765a3c" stroke-width="4"/>
+              <path d="M785 69V93L802 103" fill="none" stroke="#5b4731" stroke-width="3" stroke-linecap="round"/>
+              <text x="785" y="145" text-anchor="middle" fill="#71573d" font-size="9" font-family="monospace" letter-spacing="1">LAB TIME</text>
+              <rect x="420" y="151" width="188" height="38" rx="3" fill="#6b563b" opacity=".88"/>
+              <text x="514" y="176" text-anchor="middle" fill="#eee1c2" font-size="13" font-family="Georgia, serif" letter-spacing="2">BACTERIOLOGY</text>
+
+              <!-- long workbench -->
+              <rect x="28" y="394" width="842" height="22" rx="4" fill="url(#wood)" stroke="#563c28" stroke-width="3"/>
+              <rect x="53" y="416" width="24" height="95" fill="#68482f"/>
+              <rect x="814" y="416" width="24" height="95" fill="#68482f"/>
+              <path d="M29 403H868" stroke="#c59a66" stroke-width="3" opacity=".44"/>
+
+              <!-- station 1: culture plate -->
+              <g filter="url(#soft-shadow)">
+                <ellipse cx="94" cy="350" rx="58" ry="18" fill="#6a5237" opacity=".32"/>
+                <circle cx="94" cy="318" r="53" fill="#e2e5d1" stroke="#f8f0d7" stroke-width="7"/>
+                <circle cx="94" cy="318" r="47" fill="#c8d4bd" stroke="#9da88d" stroke-width="2"/>
+                <circle cx="94" cy="318" r="29" fill="#e6e6d0" opacity=".94"/>
+                <path d="M80 306C78 296 89 292 94 298C100 289 110 300 107 307C116 312 109 322 103 324C102 335 89 338 84 329C73 326 73 312 80 306Z" fill="#627c4f" stroke="#465a3c" stroke-width="2"/>
+                <circle cx="55" cy="300" r="2.5" fill="#735d6d"/><circle cx="60" cy="326" r="2.4" fill="#735d6d"/>
+                <circle cx="68" cy="340" r="2.4" fill="#735d6d"/><circle cx="77" cy="278" r="2.4" fill="#735d6d"/>
+                <circle cx="116" cy="278" r="2.4" fill="#735d6d"/><circle cx="132" cy="293" r="2.4" fill="#735d6d"/>
+                <circle cx="133" cy="331" r="2.4" fill="#735d6d"/><circle cx="119" cy="346" r="2.4" fill="#735d6d"/>
+              </g>
+              <text x="94" y="250" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">CULTURE PLATE</text>
+
+              <!-- station 2: question notes -->
+              <g filter="url(#soft-shadow)">
+                <path d="M176 276Q214 266 248 279V365Q214 351 176 365Z" fill="url(#paper)" stroke="#9b7952" stroke-width="2"/>
+                <path d="M248 279Q284 266 319 276V365Q284 352 248 365Z" fill="#eee3c8" stroke="#9b7952" stroke-width="2"/>
+                <path d="M192 296H233M192 307H235M192 318H229M263 296H301M263 307H300M263 318H291" stroke="#83745c" stroke-width="2" opacity=".72"/>
+                <text x="247" y="339" text-anchor="middle" fill="#7a5039" font-size="9" font-family="monospace">WHY HERE?</text>
+              </g>
+              <text x="247" y="250" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">LAB NOTEBOOK</text>
+
+              <!-- station 3: hypothesis card -->
+              <g filter="url(#soft-shadow)">
+                <rect x="337" y="267" width="118" height="103" rx="3" fill="#f0e5ca" stroke="#92704c" stroke-width="3"/>
+                <path d="M350 289H441M350 301H434M350 313H440M350 325H424M350 337H435" stroke="#8b7b61" stroke-width="2" opacity=".66"/>
+                <circle cx="396" cy="267" r="5" fill="#a65c3b"/>
+                <text x="396" y="284" text-anchor="middle" fill="#684d37" font-size="8" font-family="monospace">IF / THEN</text>
+              </g>
+              <text x="396" y="250" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">HYPOTHESIS</text>
+
+              <!-- station 4: treatment and control plates -->
+              <g filter="url(#soft-shadow)">
+                <circle cx="505" cy="324" r="38" fill="#e7ead9" stroke="#f7efd8" stroke-width="6"/>
+                <circle cx="505" cy="324" r="32" fill="#c7d3bd" stroke="#9da88d" stroke-width="2"/>
+                <circle cx="505" cy="324" r="16" fill="#ece8d6"/>
+                <circle cx="590" cy="324" r="38" fill="#e7ead9" stroke="#f7efd8" stroke-width="6"/>
+                <circle cx="590" cy="324" r="32" fill="#c7d3bd" stroke="#9da88d" stroke-width="2"/>
+                <circle cx="579" cy="316" r="2" fill="#735d6d"/><circle cx="596" cy="313" r="2" fill="#735d6d"/><circle cx="602" cy="329" r="2" fill="#735d6d"/><circle cx="583" cy="338" r="2" fill="#735d6d"/>
+                <path d="M538 276L558 256M550 269L568 287" stroke="#704e36" stroke-width="5" stroke-linecap="round"/>
+                <path d="M541 279L557 263" stroke="#d8c9a3" stroke-width="2"/>
+              </g>
+              <text x="505" y="278" text-anchor="middle" fill="#5c4934" font-size="8" font-family="monospace">TEST</text>
+              <text x="590" y="278" text-anchor="middle" fill="#5c4934" font-size="8" font-family="monospace">CONTROL</text>
+              <text x="548" y="250" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">FOLLOW-UP TEST</text>
+
+              <!-- station 5: results clipboard -->
+              <g filter="url(#soft-shadow)">
+                <rect x="638" y="263" width="111" height="117" rx="4" fill="#704d32"/>
+                <rect x="646" y="271" width="95" height="101" fill="url(#paper)"/>
+                <rect x="674" y="257" width="40" height="12" rx="4" fill="#b18a56"/>
+                <path d="M660 352V330M679 352V310M698 352V318M717 352V299" stroke="#627a55" stroke-width="9" stroke-linecap="butt"/>
+                <path d="M657 352H727" stroke="#6b563b" stroke-width="2"/>
+                <path d="M657 293H729M657 303H729" stroke="#9a8b6b" stroke-width="1" opacity=".6"/>
+                <text x="693" y="288" text-anchor="middle" fill="#684d37" font-size="8" font-family="monospace">CLEAR ZONES</text>
+              </g>
+              <text x="693" y="250" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">RESULTS</text>
+
+              <!-- station 6: conclusion report -->
+              <g filter="url(#soft-shadow)">
+                <path d="M767 284H845L864 303V372H767Z" fill="url(#paper)" stroke="#957450" stroke-width="3"/>
+                <path d="M845 284V304H864" fill="#cdb58a" stroke="#957450" stroke-width="2"/>
+                <path d="M781 320H848M781 332H848M781 344H840M781 356H830" stroke="#85755d" stroke-width="2" opacity=".7"/>
+                <circle cx="789" cy="299" r="5" fill="#6d7d51"/>
+              </g>
+              <text x="815" y="263" text-anchor="middle" fill="#5c4934" font-size="10" font-family="monospace" letter-spacing="1">CONCLUSION</text>
+
+              <!-- final archive cabinet -->
+              <g filter="url(#soft-shadow)">
+                <rect x="884" y="184" width="99" height="247" rx="4" fill="#765235" stroke="#4d3825" stroke-width="4"/>
+                <rect x="893" y="194" width="81" height="228" rx="2" fill="#a98152" stroke="#d0aa72" stroke-width="2"/>
+                <rect x="901" y="211" width="65" height="27" fill="#e6d6b6" stroke="#684b31" stroke-width="2"/>
+                <text x="934" y="229" text-anchor="middle" fill="#5e4731" font-size="7" font-family="monospace">LAB ARCHIVE</text>
+                <circle cx="959" cy="310" r="5" fill="#e2c586" stroke="#523b28" stroke-width="2"/>
+                <path d="M903 270H964M903 346H964M903 381H964" stroke="#765235" stroke-width="3" opacity=".7"/>
+              </g>
+              <text x="933" y="454" text-anchor="middle" fill="#e9d8b8" font-size="9" font-family="monospace" letter-spacing="1">LOCKED</text>
+
+              <!-- subtle left-to-right evidence path -->
+              <path d="M94 389H846" stroke="#e0c18a" stroke-width="2" stroke-dasharray="5 8" opacity=".6"/>
+              <path d="M839 382L850 389L839 396" fill="none" stroke="#e0c18a" stroke-width="2" opacity=".7"/>
+            </svg>
+
+            <div class="hotspot-map" role="group" aria-label="Six investigation locks and final archive">
+            <button class="hotspot hotspot-observation" data-object="observation" aria-label="Lock 1: inspect the culture plate and identify the observation">
+              <span class="hotspot-index">01</span><span>OBSERVATION</span>
+            </button>
+            <button class="hotspot hotspot-question" data-object="question" aria-label="Lock 2: inspect the notebook and choose a testable question">
+              <span class="hotspot-index">02</span><span>QUESTION</span>
+            </button>
+            <button class="hotspot hotspot-hypothesis" data-object="hypothesis" aria-label="Lock 3: inspect the hypothesis card">
+              <span class="hotspot-index">03</span><span>HYPOTHESIS</span>
+            </button>
+            <button class="hotspot hotspot-experiment" data-object="experiment" aria-label="Lock 4: inspect the experiment plates">
+              <span class="hotspot-index">04</span><span>EXPERIMENT</span>
+            </button>
+            <button class="hotspot hotspot-results" data-object="results" aria-label="Lock 5: analyze the results clipboard">
+              <span class="hotspot-index">05</span><span>RESULTS</span>
+            </button>
+            <button class="hotspot hotspot-conclusion" data-object="conclusion" aria-label="Lock 6: review the conclusion report">
+              <span class="hotspot-index">06</span><span>CONCLUSION</span>
+            </button>
+            <button class="hotspot hotspot-archive" data-object="archive" aria-label="Final step: enter the six-letter archive code after opening all six locks">
+              <span class="hotspot-index" aria-hidden="true">↗</span><span>OPEN ARCHIVE</span>
+            </button>
+            </div>
+          </div>
+          <p class="scene-instruction"><span aria-hidden="true">↗</span> Follow locks 01–06 from left to right. Record each letter, then open the archive.</p>
+        </section>
+
+        <aside class="notebook" aria-labelledby="notebook-title">
+          <div class="notebook-head">
+            <div>
+              <p class="eyebrow">RECOVERED LETTERS</p>
+              <h2 id="notebook-title">Research notes</h2>
+            </div>
+            <span class="notebook-icon" aria-hidden="true">✎</span>
+          </div>
+          <p class="notebook-copy">Record the letter from each correct response in scientific-method order.</p>
+          <ol class="clue-list" id="clue-list">
+            <li data-clue="observation"><span class="clue-index">01</span><span class="clue-name">Observation</span><span class="clue-letter">—</span></li>
+            <li data-clue="question"><span class="clue-index">02</span><span class="clue-name">Question</span><span class="clue-letter">—</span></li>
+            <li data-clue="hypothesis"><span class="clue-index">03</span><span class="clue-name">Hypothesis</span><span class="clue-letter">—</span></li>
+            <li data-clue="experiment"><span class="clue-index">04</span><span class="clue-name">Experiment</span><span class="clue-letter">—</span></li>
+            <li data-clue="results"><span class="clue-index">05</span><span class="clue-name">Results and analysis</span><span class="clue-letter">—</span></li>
+            <li data-clue="conclusion"><span class="clue-index">06</span><span class="clue-name">Conclusion</span><span class="clue-letter">—</span></li>
+          </ol>
+          <div class="notebook-progress">
+            <div class="progress-copy"><span>ARCHIVE CODE</span><span id="progress-count">0 / 6</span></div>
+            <progress id="progress-bar" max="6" value="0">0 of 6</progress>
+          </div>
+          <div class="notebook-note" id="notebook-note" aria-live="polite">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <span>Progress saves in this browser when storage is available. No student information is collected.</span>
+          </div>
+          <button class="reset-button" id="reset-button" type="button">Reset activity</button>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>CASE FILE 1928 <span aria-hidden="true">•</span> SCIENTIFIC METHOD</span>
+      <span>NO TIMER <span aria-hidden="true">•</span> USE HINTS WHEN YOU NEED THEM</span>
+    </footer>
+  </div>
+
+  <dialog class="puzzle-dialog" id="puzzle-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-topline">
+      <p class="eyebrow" id="dialog-kicker">LOCK 01 / OBSERVATION</p>
+      <button class="icon-button" id="close-dialog" type="button" aria-label="Close lock">×</button>
+    </div>
+    <h2 id="dialog-title" tabindex="-1">Puzzle title</h2>
+    <p class="dialog-prompt" id="dialog-prompt"></p>
+    <form id="puzzle-form">
+      <div id="puzzle-body"></div>
+      <div class="hint-area">
+        <button class="text-button" id="hint-button" type="button">Need a hint?</button>
+        <p class="hint-text" id="hint-text" hidden></p>
+      </div>
+      <div class="feedback" id="feedback" aria-live="polite" role="status"></div>
+      <div class="dialog-actions">
+        <button class="button button-secondary" id="cancel-button" type="button">Back to lab</button>
+        <button class="button button-primary" id="check-button" type="submit">Check answer <span aria-hidden="true">→</span></button>
+      </div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="game.js?v=1" defer></script>
+</body>
+</html>
